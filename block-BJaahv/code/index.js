@@ -13,7 +13,9 @@ function user(name, id, noOfProjects) {
    },
    
      studentInfo.changeName = function (newName) {
-     return studentInfo.name;
+     let prevName = studentInfo.name;
+     studentInfo.name = newName;
+     return prevName;
    }
    
   studentInfo.incrementProject = function (value = 0) {
@@ -37,7 +39,9 @@ let userMethods = {
    },
    
   changeName(newName) {
-     return this.name;
+    let prevName = this.name;
+     this.name = newName;
+     return prevName;
    },
    
   incrementProject(value = 0) {
@@ -75,7 +79,9 @@ User.prototype = {
    },
    
   changeName(newName) {
-     return this.name;
+     let prevName = this.name;
+     this.name = newName;
+     return prevName;
    },
    
   incrementProject(value = 0) {
@@ -104,7 +110,9 @@ class User{
    }
    
   changeName(newName) {
-     return this.name;
+     let prevName = this.name;
+     this.name = newName;
+     return prevName;
    }
    
   incrementProject(value = 0) {
