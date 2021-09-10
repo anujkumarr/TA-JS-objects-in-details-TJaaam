@@ -31,13 +31,13 @@ let secondQuestion = quiz(
 
 // Pseudo classical pattern 
 
-function quiz(title, options, index) {
+function Quiz(title, options, index) {
   this.title = title;
   this.options = options;
   this.index = index;
 }
 
-quiz.prototype = {
+Quiz.prototype = {
   isAnswerCorrect(value) {
     return value === this.index;
   },
@@ -47,12 +47,12 @@ quiz.prototype = {
 }
 
 
-let firstQuestion = new quiz(
+let firstQuestion = new Quiz(
   'Where is the capital of Jordan',
   ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
   1
 );
-let secondQuestion = new quiz(
+let secondQuestion = new Quiz(
   'Where is the capital of Jamaica',
   ['Tashkent', 'Amaan', 'Kingston', 'Nairobi'],
   2
@@ -60,7 +60,7 @@ let secondQuestion = new quiz(
 
 // class pattern
 
-class quiz{
+class Quiz{
   constructor(title, options, index) {
     this.title = title;
     this.options = options;
@@ -74,12 +74,12 @@ class quiz{
   }
 }
 
-let firstQuestion = new quiz(
+let firstQuestion = new Quiz(
   'Where is the capital of Jordan',
   ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
   1
 );
-let secondQuestion = new quiz(
+let secondQuestion = new Quiz(
   'Where is the capital of India',
   ['Delhi', 'Kolkata', 'Mumbai', 'Bengaluru'],
   0
