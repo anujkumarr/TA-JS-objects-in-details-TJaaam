@@ -2,6 +2,7 @@ class Square {
   constructor(side) {
     this.width = side;
     this.height = side;
+    this.numberOfTimes = 0;
   }
 
   description() {
@@ -13,23 +14,28 @@ class Square {
   }
 
   get area() {
-    return this.calcArea
+    this.numberOfTimes++;
+    if (this.numberOfTimes > 4) {
+      alert("Upper limit reached")
+    } else {
+      return this.width * this.height;
+    }
   }
 
-  set area(calcArea) {
-    this.width = calcArea;
-    this.height = calcArea;
+  set area(value) {
+    let side = Math.sqrt(value);
+    this.width = side;
+    this.height = side;
   }
 
-  // static isEqual()
-
-  // numberOfTimes(value = 0) {
-  //   if (this.area > 4) {
-  //     return "Upper Limit Reached"
-  //   }
-
-  // }
+  static isEqual(a, b) {
+    return (a.width * a.height) === (b.width * b.height);
+  }
 }
+
+let square1 = new Square(40);
+
+let square2 = new Square(100);
 
 // user
 
@@ -45,12 +51,13 @@ class User{
   }
 
   set fullName(fName) {
-    let splitName = fName.split("");
-    if (fName.length > 5) {
-      this.firstName = splitName[0];
-      this.lastName = splitName[1];
+    if (fName.length < 5) {
+      alert("Full name should be more than 5 characters")
     } else {
-      return "Full Name should be more than 5 characters"
+      let firstName = fName.split(" ")[0];
+      let lastName = fName.split(" ")[1];
+      this.firstName = firstName;
+      this.lastName = lastName;
     }
     
   }
