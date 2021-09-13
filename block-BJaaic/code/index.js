@@ -48,11 +48,10 @@ let dogMethods = {
 
 
 function dog(name, color, location, numberOfLegs) {
-  let createDog = Object.create(dogMethods, animalMethods)
+  let createDog = animalProperties(location, numberOfLegs);
+  Object.setPrototypeOf(createDog, dogMethods)
   createDog.name = name;
   createDog.color = color;
-  createDog.location = location;
-  createDog.numberOfLegs = numberOfLegs;
 
   return createDog;
 }
@@ -84,12 +83,11 @@ let catMethods = {
 }
 
 function cat(name, colorOfEyes, location, numberOfLegs) {
-  let createCat = Object.create(catMethods, animalMethods)
+  let createCat = animalProperties(location, numberOfLegs);
+  Object.setPrototypeOf(createCat, catMethods)
   createCat.name = name;
   createCat.colorOfEyes = colorOfEyes;
-  createCat.location = location;
-  createCat.numberOfLegs = numberOfLegs;
-
+  
   return createCat;
 }
 
