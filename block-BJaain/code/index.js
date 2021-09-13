@@ -9,7 +9,7 @@ console.log(this === window); // true
 var myFunction = function () {
   console.log(this);
 };
-myFunction(); // window{}
+myFunction(); // window
 
 // ------------
 
@@ -33,8 +33,8 @@ foo(); //
 // This for IIFE
 (function () {
   console.log('Anonymous function invocation'); // Anonymous function invocation
-  console.log(this === window);// true
-})(); //Output
+  console.log(this === window);
+})(); // true
 
 // ------------
 
@@ -42,7 +42,7 @@ var myObject = {};
 myObject.someMethod = function () {
   console.log(this);
 };
-myObject.someMethod(); // {someMethod: f }
+myObject.someMethod(); // myObject
 
 // ------------
 
@@ -56,9 +56,9 @@ function Person(fn, ln) {
 }
 
 let person = new Person('John', 'Reed');
-person.displayName(); // John Reed
+person.displayName(); //  Name: John Reed
 let person2 = new Person('Paul', 'Adams');
-person2.displayName(); // Paul Adams
+person2.displayName(); // Name: Paul Adams
 
 // ------------
 
@@ -78,9 +78,8 @@ let user = {
 
 user.foo(); // foo is not defined
 let fun1 = user.foo1;
-fun1(); // Output ??
-user.foo1(); // Output ??
-
+fun1(); // true
+user.foo1(); // false
 // ------------
 
 this.x = 9;
@@ -132,22 +131,22 @@ obj.getThis3 = obj.getThis.bind(obj);
 obj.getThis4 = obj.getThis2.bind(obj);
 
 // Output
-obj.getThis(); // window{...}
+obj.getThis(); // window
 
 // Output
-obj.getThis.call(a); // window{...}
+obj.getThis.call(a); // window
 
 // Output
-obj.getThis2(); // {getThis: ƒ, getThis2: ƒ, getThis3: ƒ, getThis4: ƒ}
+obj.getThis2(); // obj
 
 // Output
-obj.getThis2.call(a);// {a: 'a'}
+obj.getThis2.call(a);// a
 
 // Output
-obj.getThis3(); // window{}
+obj.getThis3(); // window
 
 // Output
-obj.getThis4(); // {getThis: ƒ, getThis2: ƒ, getThis3: ƒ, getThis4: ƒ}
+obj.getThis4(); // obj
 
 // -------------
 
@@ -183,7 +182,7 @@ console.log(person.print()); // Jay Person
 let name1 = person.print;
 let name2 = person.details;
 
-console.log(name1()); // 
+console.log(name1()); // ""
 console.log(name2.print()); // Jay Details
 // --------
 
@@ -208,7 +207,7 @@ let object = {
     console.log('this inside of outerFn double()');
     console.log(this);
     return this.data.map(function (item) {
-      console.log(this); // [2, 4, 6 ]
+      console.log(this); // window
       return item * 2;
     });
   },
@@ -216,7 +215,7 @@ let object = {
     console.log('this inside of outerFn doubleArrow()');
     console.log(this);
     return this.dataDouble.map((item) => {
-      console.log(this); // [2, 4, 6 ]
+      console.log(this); // obj
       return item * 2; 
     });
   },
