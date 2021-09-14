@@ -27,7 +27,7 @@ Without editing the code you've already written, add an `introduce` method to th
 
 #### Challenge 1/3
 
-Create a function `PersonConstructor` that uses the `this` keyword to save a single property onto its scope called `greet`. `greet` should be a function that logs the string 'hello'.
+<!-- Create a function `PersonConstructor` that uses the `this` keyword to save a single property onto its scope called `greet`. `greet` should be a function that logs the string 'hello'. -->
 
 #### Challenge 2/3
 
