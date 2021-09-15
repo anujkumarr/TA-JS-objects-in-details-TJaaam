@@ -31,7 +31,7 @@ class Stack {
     return this.arr.join(" ");
   }
 
-  get() {
+  get length() {
     return this.arr.length;
   }
 }
@@ -66,7 +66,7 @@ class Queue{
     return this.arr.join();
   }
 
-  get() {
+  get length(){
     return this.arr.length;
   }
 }
