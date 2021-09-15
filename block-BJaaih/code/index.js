@@ -5,6 +5,14 @@
 
 // myMap function goes here
 
+Array.prototype.myMap = function(cb){
+  let arr = [];
+  for (let i = 0; i < this.length; i++){
+    arr.push(cb(this[i]))
+  }
+  return arr;
+}
+
 // Test the myMap function you created above
 
 let numbers = [1, 5, 6, 8, 9];
@@ -28,7 +36,15 @@ console.log(capitalWords); // it should be 'Quick Brown Fox Jumped Over A Lazy D
 After adding the function test it using the code below.
 */
 
-// You code goes here
+Array.prototype.myFilter = function (cb) {
+  let arr = [];
+  for (let i = 0; i < this.length; i++){
+    if (cb(this[i])){
+      arr.push(this[i])
+    }
+  }
+  return arr;
+}
 
 let even = numbers.myFilter(function (num) {
   return num % 2 === 0;
@@ -49,7 +65,12 @@ Make sure it does not the changes the original array.
 
 */
 
-// You code goes here
+Array.prototype.shuffle = function () {
+  let newArr = [...this].sort(() => {
+    return Math.random() - 0.5;
+  })
+  return newArr;
+}
 
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(numbers.shuffle());
@@ -63,8 +84,9 @@ new array and it should only contain unique elements in the array.
 Unique means no element should come multiple times.
 */
 
-// You code goes here
-
+Array.prototype.unique = function () {
+  
+}
 // Test to check the shuffle method (It will return different output every time you call)
 let num = [1, 2, 3, 4, 2, 3, 6, 7, 7];
 let strings = 'helloworld'.split('');
@@ -77,7 +99,7 @@ console.log(strings.unique()); // ['h', 'e', 'l', 'o', 'w', 'r', 'd']
 array that will contain only element that is common in both the array.
 */
 
-// You code goes here
+
 
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(num.intersection([2, 7, 11, 32])); // [2, 7]
