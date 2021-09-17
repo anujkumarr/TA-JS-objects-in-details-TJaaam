@@ -1,0 +1,149 @@
+@import "reset";
+
+*,*::after,*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.flex{
+  display: flex;
+}
+.justify-center{
+  justify-content: center;
+}
+.items-center{
+  align-items: center;
+}
+h1{
+  font-size: 3rem;
+  padding-top: 2rem;
+  .fas{
+    color: rgb(0,140,186);
+    margin-right: 1rem;
+  }
+  .middle{
+    color: rgb(0,140,186);
+  }
+}
+.container {
+   
+  .form {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    margin-top: 4rem;
+    padding: 2rem;
+    border-radius: .5rem;
+    legend {      
+      text-align: center;
+      margin: 1rem 0;
+      font-size: 3rem;
+      span {
+        color: #10a5f5;
+      }
+      i {
+        margin-right: .7rem;
+        color: #10a5f5;
+      }
+    }
+    
+    .form-control {
+        display: block;
+        width: 100%;
+        margin: 1rem 0;
+        padding: .6rem;
+        border: 1px solid lightgrey;
+        outline: 0;
+        border-radius: .5rem;
+
+      &:focus {
+        border: 1px solid teal;
+      }
+    }
+    
+    button {
+      display: block;
+      width: 100%;
+      padding: .6rem;
+      margin: 1.5rem 0;
+      outline: 0;
+      background-color: teal;
+      border: 0;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+    } 
+        
+  }
+    
+    
+  .books {
+    padding-top: 5rem;
+    .bookList {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap !important; 
+
+      li {
+          flex: 0 1 30%;
+          margin: 1rem 0;
+          background: rgb(162, 238, 238);
+          padding: 1rem;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        span {
+          display: flex;
+          width: 100%;
+          justify-content: flex-end;
+          padding-right: .25rem;
+          padding-top: .25rem;
+          cursor: pointer;
+        }
+        div {
+          align-self: center;
+          width: 200px;
+          height: 300px;
+          background: none;
+        }
+        img {
+          width: 100%;
+          padding: .5rem;
+        }
+
+        h3 {
+          font-size: 1.5rem;
+          margin: .7rem 0;
+          font-weight: 700;  
+        }
+
+        p {
+          margin: .5rem 0;
+        }
+        button {
+          padding: .6rem 1rem;
+          font-size: 1.1rem;
+          color: #fff;
+          border: 0;
+          outline: 0;
+          cursor: pointer;
+          border-radius: .5rem;
+          &:hover {
+            background-color: teal;
+          }
+        }
+      }            
+    }
+        
+  }
+    
+}
